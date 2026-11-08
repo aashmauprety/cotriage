@@ -1,0 +1,7 @@
+anthropic[vertex]>=1.13
+google-auth>=2.61
+requests>=2.34
+numpy>=2.5
+scipy>=1.18
+scikit-learn>=1.9
+matplotlib>=3.11

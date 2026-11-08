@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# datasets and model outputs are not tracked
+AIT-LDS-v1.1/
+AIT-LDS-v2/
+AIT-ADS/
+alerts_v2/*
+outputs/
+tools_data/
+windows/
+prompts/
+alerts/
+alerts_v2/
