@@ -23,7 +23,7 @@ import policies as P  # noqa: E402
 import analyze_C as A  # noqa: E402
 
 LAM = 0.05
-IDS_C = set(l.strip() for l in open(os.path.join(A.BASE, "alerts_v2", "sample_C_gemini.txt")) if l.strip())
+IDS_C = set(A.SAMPLE)  # the 2,235 evaluated alerts
 
 
 class Setting:

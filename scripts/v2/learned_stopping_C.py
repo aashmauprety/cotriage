@@ -31,7 +31,7 @@ import analyze_C as A  # noqa: E402
 LAM = 0.05
 GRID = np.round(np.arange(0, 1.0001, 0.05), 2)
 BANDS = [(1.0, 0.0)] + [(l, h) for l in GRID for h in GRID if l <= h]  # (1, 0) = never continue
-IDS_C = set(l.strip() for l in open(os.path.join(A.BASE, "alerts_v2", "sample_C_gemini.txt")) if l.strip())
+IDS_C = set(A.SAMPLE)  # the 2,235 evaluated alerts
 
 
 class Data:

@@ -40,11 +40,13 @@ Setting C: 2,235 alert cases (235 attacks, 2,000 benign) from eight networks, ea
 
 A supervised random forest reaches 96.8 BA. Trained on one network (about 280 labeled alerts) it drops to 74.2, while P2 routing keeps 92.3 (Haiku) and 97.5 (Opus). In Setting A (589 Suricata alert cases, 25 attacks), Haiku with the IP-activity tool alone reaches 97.0 BA at $0.37, compared with 87.3 BA at $6.79 for Opus without tools. For Flash-Lite, P2 routing calls too few tools and stays 3.0 points below all tools.
 
+At the natural share of attacks in Setting C (0.93%), Haiku with P2 routing would escalate 13.5 alerts per network and day, 1.4 of them false (precision 90%, recall 86.1%); with all tools it would escalate 87, 75 of them false (`results/operational.md`). Without tools, Haiku's confidence on the attacks it misses (median 0.11) is close to its confidence on benign alerts (median 0.08), so escalating on the model's confidence cannot separate them (`results/confidence_C.md`).
+
 ![Setting C: balanced accuracy against token cost](figures/setting_c_cost.png)
 
 ![Setting A: balanced accuracy as tools are added](figures/setting_a_ladder.png)
 
-All result tables are in `results/`. `settingC.md` and `tables.md` hold the main numbers; `bootstrap_ci.md` the confidence intervals; `train_size_C.md`, `generalization_C.md`, `prompt_test*.md`, and `rename_test.md` the robustness checks; `token_counts.md` the tokens per alert for recomputing cost at other prices.
+All result tables are in `results/`. `settingC.md` and `tables.md` hold the main numbers; `bootstrap_ci.md` the confidence intervals; `operational.md` precision, recall, and escalations per day; `confidence_C.md` the model confidence on missed attacks; `train_size_C.md`, `generalization_C.md`, `prompt_test*.md`, and `rename_test.md` the robustness checks; `token_counts.md` the tokens per alert for recomputing cost at other prices.
 
 ## Manuscript downloads
 

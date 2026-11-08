@@ -23,7 +23,7 @@ sys.argv = sys.argv[:1]
 import analyze_C as A  # noqa: E402
 
 LAM = 0.05
-IDS = set(l.strip() for l in open(os.path.join(A.BASE, "alerts_v2", "sample_C_gemini.txt")) if l.strip())
+IDS = set(A.SAMPLE)  # the 2,235 evaluated alerts
 C = A.CASES
 
 

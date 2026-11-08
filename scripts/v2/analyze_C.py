@@ -29,10 +29,12 @@ NAME = {"claude-haiku-5-5": "Haiku 5.5", "claude-opus-5-5": "Opus 5.5", "gemini-
 EXPENSIVE = {"ip_activity", "host_activity"}
 CASES = load_cases()
 # cases involving only the shared VPN gateway address during an attack phase are uncertain and excluded
-# sample_C_dropped.txt: cases drawn as malicious that lost the label when DNS names that normal users also
+# DROPPED: cases drawn as malicious that lost the label when DNS names that normal users also
 # query (e.g. the company's own mail server, hit once by the attacker's DNS scan) were restricted to the scan
-_dropped = os.path.join(BASE, "alerts_v2", "sample_C_dropped.txt")
-DROPPED = {l.strip() for l in open(_dropped)} if os.path.exists(_dropped) else set()
+DROPPED = {"wheeler_00187", "wheeler_00911", "wheeler_01359", "wheeler_01720", "wheeler_02314",
+           "wheeler_03716", "wheeler_03727", "wheeler_04827", "wheeler_04848", "wheeler_05363",
+           "wheeler_05827", "wheeler_05846", "wheeler_05997", "wheeler_07134", "wheeler_07507",
+           "wheeler_07596", "wheeler_07697", "wheeler_07845", "wheeler_08449", "wheeler_09297"}
 SAMPLE = [c for c in (l.strip() for l in open(os.path.join(BASE, "alerts_v2", "sample_C.txt")))
           if c and CASES[c]["certain"] and c not in DROPPED]
 _b2 = os.path.join(BASE, "alerts_v2", "sample_C_benign2.txt")
